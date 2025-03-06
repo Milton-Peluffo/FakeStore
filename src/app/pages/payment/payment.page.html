@@ -1,0 +1,60 @@
+<ion-header>
+  <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button routerLink="/cart">
+        <ion-icon name="arrow-back-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title class="title-with-icon">
+      <i class='bx bx-credit-card'></i>
+      Pago
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="form-container">
+    <div class="input-group">
+      <ion-item>
+        <ion-label position="floating">Nombre Completo</ion-label>
+        <ion-input [(ngModel)]="customer.name" type="text"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Correo Electrónico</ion-label>
+        <ion-input [(ngModel)]="customer.email" type="email"></ion-input>
+      </ion-item>
+    </div>
+
+    <ion-item>
+      <ion-label position="floating">Dirección</ion-label>
+      <ion-input [(ngModel)]="customer.address" type="text"></ion-input>
+    </ion-item>
+
+    <div class="input-group">
+      <ion-item>
+        <ion-label position="floating">Número de Tarjeta</ion-label>
+        <ion-input [(ngModel)]="customer.cardNumber" type="tel" pattern="[0-9]*" maxlength="16" inputmode="numeric"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Fecha de Expiración</ion-label>
+        <ion-input [(ngModel)]="customer.expiration" type="month"></ion-input>
+      </ion-item>
+    </div>
+
+    <ion-item>
+      <ion-label position="floating">CVV</ion-label>
+      <ion-input [(ngModel)]="customer.cvv" type="tel" pattern="[0-9]*" maxlength="4" inputmode="numeric"></ion-input>
+    </ion-item>
+  </div>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-title class="total">Total: ${{ cartService.getTotal() }}</ion-title>
+  </ion-toolbar>
+  <div class="pay-button-container">
+    <ion-button expand="block" class="pay-button" (click)="processPayment()">Pagar</ion-button>
+  </div>
+</ion-footer>

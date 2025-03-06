@@ -1,0 +1,46 @@
+<ion-header>
+  <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button routerLink="/home">
+        <ion-icon name="arrow-back-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>
+      <i class='bx bx-cart' style="margin-right: 10px; font-size: 1.5em;"></i>
+      Carrito de Compras
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let item of cartItems" class="cart-item">
+      <ion-thumbnail slot="start">
+        <img [src]="item.image" />
+      </ion-thumbnail>
+      <ion-label>
+        <h2>{{ item.title }}</h2>
+        <p>\${{ item.price }}</p>
+      </ion-label>
+      <div class="quantity-controls">
+        <ion-button fill="clear" (click)="updateItemQuantity(item, -1)">-</ion-button>
+        <ion-input type="number" [(ngModel)]="item.quantity" readonly></ion-input>
+        <ion-button fill="clear" (click)="updateItemQuantity(item, 1)">+</ion-button>
+      </div>
+      <ion-button color="danger" fill="clear" (click)="removeCartItem(item.id)">
+        <ion-icon name="trash-outline"></ion-icon>
+      </ion-button>
+    </ion-item>
+  </ion-list>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-title class="total">Total: ${{ totalAmount }}</ion-title>
+  </ion-toolbar>
+  <div class="pay-button-container">
+    <ion-button class="pay-button" expand="block" (click)="proceedToCheckout()">Pagar</ion-button>
+  </div>
+</ion-footer>

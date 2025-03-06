@@ -1,0 +1,22 @@
+ion-content {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+  
+  ion-footer {
+    .finalizar-button-container {
+      padding: 10px;
+      display: flex;
+      justify-content: center;
+    }
+  
+    .finalizar-button {
+      width: 100%;
+      height: 50px;
+      border-radius: 25px;
+      --background: #5ea3b8;
+      --background-activated: #5ea3b8;
+      --color: #fff;
+    }
+  }

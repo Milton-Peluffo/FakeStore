@@ -1,0 +1,62 @@
+<ion-header>
+  <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+
+  <ion-toolbar>
+    <ion-title>
+      <i class='bx bx-receipt' style="font-size: 30px;"></i>
+      Resumen de Compra
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <!-- Sección de Datos del Cliente -->
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Datos del Cliente</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <p><strong>Nombre:</strong> {{ customer.name }}</p>
+      <p><strong>Correo:</strong> {{ customer.email }}</p>
+      <p><strong>Dirección:</strong> {{ customer.address }}</p>
+    </ion-card-content>
+  </ion-card>
+
+  <!-- Sección de Productos Comprados -->
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Productos Comprados</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list>
+        <ion-item *ngFor="let item of purchasedItems">
+          <ion-thumbnail slot="start">
+            <img [src]="item.image" alt="{{ item.title }}">
+          </ion-thumbnail>
+          <ion-label>
+            <h2>{{ item.title }}</h2>
+            <p>Cantidad: {{ item.quantity }}</p>
+            <p>Precio unitario: ${{ item.price.toFixed(2) }}</p>
+            <p><strong>Total: ${{ (item.price * item.quantity).toFixed(2) }}</strong></p>
+          </ion-label>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+
+  <!-- Sección de Total Pagado -->
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Total Pagado</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <h2><strong>\${{ total.toFixed(2) }}</strong></h2>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
+
+<ion-footer>
+  <div class="finalizar-button-container">
+    <ion-button expand="full" class="finalizar-button" (click)="goToHome()">Finalizar</ion-button>
+  </div>
+</ion-footer>

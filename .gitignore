@@ -1,0 +1,13 @@
+# Ignorar dependencias de Node.js
+node_modules/
+node_modules/*
+
+# Ignorar archivos de Angular
+.angular/
+.angular/*
+
+# Ignorar archivos de entorno y configuración
+.env
+.DS_Store
+npm-debug.log
+yarn-error.log

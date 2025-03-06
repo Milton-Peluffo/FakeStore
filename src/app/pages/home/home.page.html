@@ -1,0 +1,46 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title style="display: flex; align-items: center;">
+      <img src="assets/icon/carro-de-compras-rapido.png" alt="Logo" style="height: 24px; margin-right: 8px;">
+      Fake Shop
+    </ion-title>
+    <ion-buttons slot="end">
+      <ion-button routerLink="/cart">
+        <ion-icon name="cart-outline"></ion-icon>
+        <ion-badge *ngIf="totalCartItems > 0">{{ totalCartItems }}</ion-badge> 
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <!-- Barra de búsqueda -->
+  <ion-searchbar [(ngModel)]="searchQuery" (ionInput)="searchProducts()"></ion-searchbar>
+
+  <!-- Selector de categorías -->
+  <ion-item>
+    <ion-label>Categorías</ion-label>
+    <ion-select [(ngModel)]="currentCategory" (ionChange)="handleCategoryChange()" interface="popover">
+      <ion-select-option value="">Todas</ion-select-option> 
+      <ion-select-option *ngFor="let category of categoryList" [value]="category">
+        {{ category }}
+      </ion-select-option>
+    </ion-select>
+  </ion-item>
+
+  <!-- Lista de productos en Grid -->
+  <ion-grid class="product-grid">
+    <ion-row>
+      <ion-col size="6" *ngFor="let product of itemList">
+        <div class="product-card">
+          <img [src]="product.image" alt="{{ product.title }}">
+          <h3>{{ product.title }}</h3>
+          <p class="price">\${{ product.price }}</p>
+          <ion-button class="boton-obtener" expand="block" fill="solid" (click)="navigateToProductDetails(product.id)">
+            OBTENER
+          </ion-button>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

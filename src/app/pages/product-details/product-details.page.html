@@ -1,0 +1,44 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="navigateBack()">
+        <ion-icon name="arrow-back-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Detalles del Producto</ion-title>
+    <ion-buttons slot="end">
+      <ion-button routerLink="/cart">
+        <ion-icon name="cart-outline"></ion-icon>
+        <ion-badge *ngIf="totalCartItems > 0">{{ totalCartItems }}</ion-badge> 
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="product-container">
+    <!-- Imagen centrada -->
+    <div class="product-image">
+      <img [src]="productDetails.image" alt="{{ productDetails.title }}">
+    </div>
+
+    <!-- Información y botones -->
+    <div class="product-details">
+      <h2>{{ productDetails.title }}</h2>
+      <p class="category"><strong>Categoría:</strong> {{ productDetails.category }}</p>
+      <p class="price"><strong>Precio:</strong> ${{ productDetails.price }}</p>
+      <p class="rating"><strong>Calificación:</strong> ⭐ {{ productDetails.rating?.rate }} ({{ productDetails.rating?.count }} votos)</p>
+      <p class="description">{{ productDetails.description }}</p>
+
+      <!-- Selector de cantidad -->
+      <div class="quantity-selector">
+        <ion-button fill="outline" (click)="decreaseProductQuantity()">-</ion-button>
+        <ion-input type="number" [(ngModel)]="productQuantity" min="1" readonly></ion-input>
+        <ion-button fill="outline" (click)="increaseProductQuantity()">+</ion-button>
+      </div>
+
+      <!-- Botón de añadir al carrito -->
+      <ion-button class="boton-añadir" expand="block" (click)="addProductToCart()">Añadir al carrito</ion-button>
+    </div>
+  </div>
+</ion-content>

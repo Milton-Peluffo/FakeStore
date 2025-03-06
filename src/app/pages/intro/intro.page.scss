@@ -1,0 +1,30 @@
+.glass-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; // Ocupar toda la pantalla
+}
+
+img {
+  width: 60%;  // Ajusta el tamaño según necesites
+  max-width: 400px; // Máximo tamaño
+}
+
+/* Animación */
+.blur-in-expand {
+  animation: blur-in-expand 0.4s linear both;
+}
+
+@keyframes blur-in-expand {
+  0% {
+    transform: scale(0);
+    filter: blur(12px);
+    opacity: 0;
+  }
+
+  100% {
+    transform: scale(1);
+    filter: blur(0);
+    opacity: 1;
+  }
+}
