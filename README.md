@@ -1,6 +1,6 @@
 # FakeStore - Proyecto Ionic con Angular  
 
-Este repositorio contiene el código fuente de **FakeStore**, una aplicación desarrollada con **Ionic y Angular y con la API de FakeStoreAPI**.  
+Este repositorio contiene el código fuente de **FakeStore**, una aplicación desarrollada con **Ionic y Angular con la API de FakeStoreAPI**.  
 
 ## 📌 Instrucciones para usar el proyecto  
 
