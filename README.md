@@ -1,40 +1,42 @@
+# FakeStore - Proyecto Ionic con Angular  
 
-FakeStore - Proyecto Ionic con Angular
-Este repositorio contiene el código fuente de FakeStore, una aplicación desarrollada con Ionic y Angular.
+Este repositorio contiene el código fuente de **FakeStore**, una aplicación desarrollada con **Ionic y Angular y con la API de FakeStoreAPI**.  
 
-📌 Instrucciones para usar el proyecto
-Debido a restricciones de tamaño en GitHub, el proyecto completo no pudo ser subido. Para que funcione correctamente, sigue estos pasos:
+## 📌 Instrucciones para usar el proyecto  
 
-Instalar Ionic y Angular (si no los tienes):
+⚠️ **Debido a restricciones de tamaño en GitHub, no pude subir el proyecto completo.**  
+Pero para que funcione correctamente, sigue estos pasos:  
 
-bash
-Copiar
-Editar
+### 1️⃣ Instalar Ionic y Angular (si no los tienes)  
+Ejecuta el siguiente comando en la terminal:  
+```bash
 npm install -g @ionic/cli
-Crear un nuevo proyecto en blanco de Ionic con Angular:
+```
+2️⃣ Crear un nuevo proyecto en blanco de Ionic con Angular
 
-bash
-Copiar
-Editar
+Ejecuta el siguiente comando:
+```bash
 ionic start FakeStore blank --type=angular
+```
+⚠️ Debe seleccionar ngmodules
+
 Esto generará la estructura base necesaria para ejecutar el proyecto.
 
-Reemplazar la carpeta src:
+3️⃣ Reemplazar la carpeta src
 
 Descarga el contenido de este repositorio.
+
 Copia y pega la carpeta src dentro del proyecto recién creado.
-Asegúrate de sobrescribir los archivos cuando lo solicite.
-Instalar las dependencias del proyecto:
+(Asegúrate de sobrescribir los archivos cuando lo solicite).
 
-bash
-Copiar
-Editar
+4️⃣ Instalar las dependencias del proyecto
+Dentro del directorio del proyecto, ejecuta:
+```bash
 npm install
-Ejecutar el proyecto en modo desarrollo:
-
-bash
-Copiar
-Editar
+```
+Ahora el proyecto debería ejecutarse sin problemas en tu navegador.
+Para ello ejecuta el comando:
+```bash
 ionic serve
-Ahora el proyecto debería ejecutarse sin problemas en tu navegador. 🚀
-
+```
+Y listo.
