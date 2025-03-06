@@ -14,7 +14,7 @@ npm install -g @ionic/cli
 ```
 2️⃣ Crear un nuevo proyecto en blanco de Ionic con Angular
 
-Ejecuta el siguiente comando:
+Para ello ejecuta el siguiente comando:
 ```bash
 ionic start FakeStore blank --type=angular
 ```
