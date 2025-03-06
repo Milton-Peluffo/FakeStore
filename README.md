@@ -18,7 +18,7 @@ Para ello ejecuta el siguiente comando:
 ```bash
 ionic start FakeStore blank --type=angular
 ```
-⚠️ Debe seleccionar ngmodules
+⚠️ Debe seleccionar NgModules
 
 Esto generará la estructura base necesaria para ejecutar el proyecto.
 
